@@ -14,8 +14,10 @@ import { BuscarComponent } from './pages/buscar/buscar.component';
 import { HeroeComponent } from './pages/heroe/heroe.component';
 import { HomeComponent } from './pages/home/home.component';
 import { ListadoComponent } from './pages/listado/listado.component';
-import { MatButtonModule } from '@angular/material/button';
-import { MatCardModule } from '@angular/material/card';
+import { HeroeTarjetaComponent } from './components/heroe-tarjeta/heroe-tarjeta.component';
+import { ImagenPipe } from './pipes/imagen.pipe';
+import { MaterialModule } from '../material/material.module';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -25,19 +27,16 @@ import { MatCardModule } from '@angular/material/card';
     BuscarComponent,
     HeroeComponent,
     HomeComponent,
-    ListadoComponent
+    ListadoComponent,
+    HeroeTarjetaComponent,
+    ImagenPipe
   ],
   imports: [
     CommonModule,
-    MatButtonModule,
-    MatCardModule,
-    MatIconModule,
-    MatListModule,
+    FormsModule,
+    MaterialModule,
     HeroeRoutingModule,
     FlexLayoutModule,
-    MatSidenavModule,
-    MatToolbarModule
-
   ]
 })
 export class HeroesModule { }
