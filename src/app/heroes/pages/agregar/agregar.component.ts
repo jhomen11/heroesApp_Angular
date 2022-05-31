@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute, Router } from '@angular/router';
 import { switchMap} from 'rxjs/operators'
 
@@ -39,7 +40,8 @@ export class AgregarComponent implements OnInit {
 
   constructor( private heroesServices: HeroesService,
                 private activatedRoute: ActivatedRoute,
-                private route: Router) { }
+                private route: Router,
+                public dialog: MatDialog) { }
 
   ngOnInit(): void {
 
@@ -71,6 +73,13 @@ export class AgregarComponent implements OnInit {
         this.route.navigate(['/heroes/listado'])
       } )
     }
+  }
+
+  borrarHeroe(){
+    this.heroesServices.eliminarHeroe(this.heroe)
+      .subscribe(resp =>{
+        this.route.navigate(['/heroes/listado'])
+      })
   }
 
 }

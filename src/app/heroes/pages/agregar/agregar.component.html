@@ -59,10 +59,20 @@
                     required>
         </mat-form-field>
 
-        <button mat-raised-button color="primary"
+        <div fxLayout>
+            <button mat-raised-button color="primary"
                 (click)="guardar()">
             Guardar
         </button>
+
+        <span class="spacer"></span>
+
+        <button *ngIf="heroe.id"
+                mat-raised-button color="warn"
+                (click)="borrarHeroe()">
+            Eliminar
+        </button>
+        </div>
     </div>
 
     <!-- IMAGEN -->
